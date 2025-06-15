@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, MessageSquare, Instagram } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const MenuFooter = () => {
@@ -21,37 +21,33 @@ const MenuFooter = () => {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Location */}
-          <Card className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border-amber-300/30 border-2 shadow-2xl">
+          <Card className="bg-gradient-to-br from-amber-800/40 to-orange-800/30 backdrop-blur-lg border-amber-600/40 border-2 shadow-2xl">
             <CardContent className="p-8 text-center">
-              <div className="bg-gradient-to-br from-orange-400 to-amber-400 rounded-full p-4 w-fit mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-full p-4 w-fit mx-auto mb-6 shadow-lg">
                 <MapPin className="h-14 w-14 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-amber-100">📍 Location</h3>
               <div className="text-amber-200 leading-relaxed space-y-1 text-lg">
                 <p className="font-semibold text-white">Capulas Felix Restaurant</p>
-                <p>Near City Center</p>
-                <p>Main Street, Downtown</p>
-                <p>City, State - 123456</p>
+                <p>Chinia Road, Police Line</p>
+                <p>Garwah - 822114</p>
               </div>
             </CardContent>
           </Card>
 
           {/* Contact */}
-          <Card className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border-green-300/30 border-2 shadow-2xl">
+          <Card className="bg-gradient-to-br from-green-800/40 to-emerald-800/30 backdrop-blur-lg border-green-600/40 border-2 shadow-2xl">
             <CardContent className="p-8 text-center">
-              <div className="bg-gradient-to-br from-green-400 to-emerald-400 rounded-full p-4 w-fit mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-green-500 to-emerald-500 rounded-full p-4 w-fit mx-auto mb-6 shadow-lg">
                 <Phone className="h-14 w-14 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-green-100">📞 Contact</h3>
               <div className="text-green-200 space-y-3 text-lg">
                 <p className="flex items-center justify-center gap-2">
-                  <span>📞</span> +91 9876543210
+                  <span>📞</span> +91 9686239355
                 </p>
-                <p className="flex items-center justify-center gap-2">
-                  <span>📞</span> +91 9876543211
-                </p>
-                <p className="flex items-center justify-center gap-2">
-                  <span>✉️</span> info@capulasfelix.com
+                <p className="flex items-center justify-center gap-2 bg-green-600/20 px-3 py-1 rounded-lg">
+                  <span>📱</span> WhatsApp: +91 9662487587
                 </p>
                 <p className="flex items-center justify-center gap-2 font-semibold text-white">
                   <span>🕐</span> Open: 9:00 AM - 11:00 PM
@@ -60,27 +56,30 @@ const MenuFooter = () => {
             </CardContent>
           </Card>
 
-          {/* Feedback */}
-          <Card className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-lg border-blue-300/30 border-2 shadow-2xl">
+          {/* Feedback & Social */}
+          <Card className="bg-gradient-to-br from-purple-800/40 to-pink-800/30 backdrop-blur-lg border-purple-600/40 border-2 shadow-2xl">
             <CardContent className="p-8 text-center">
-              <div className="bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full p-4 w-fit mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-full p-4 w-fit mx-auto mb-6 shadow-lg">
                 <MessageSquare className="h-14 w-14 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-blue-100">💬 Feedback</h3>
-              <div className="text-blue-200 space-y-3 text-lg">
+              <h3 className="text-2xl font-bold mb-4 text-purple-100">💬 Connect</h3>
+              <div className="text-purple-200 space-y-3 text-lg">
                 <p className="text-white font-medium">We'd love to hear from you!</p>
                 <div className="space-y-2">
-                  <p className="flex items-center justify-center gap-2">
-                    <span>📱</span> WhatsApp: +91 9876543210
-                  </p>
+                  <a 
+                    href="https://www.instagram.com/capulas.felix?utm_source=qr&igsh=MWhpMmJqMzc1amxrdw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 px-3 py-2 rounded-lg hover:from-pink-500 hover:to-purple-500 transition-all duration-300 text-white font-medium"
+                  >
+                    <Instagram className="h-5 w-5" />
+                    Follow us on Instagram
+                  </a>
                   <p className="flex items-center justify-center gap-2">
                     <span>⭐</span> Rate us on Google
                   </p>
                   <p className="flex items-center justify-center gap-2">
-                    <span>📧</span> Send feedback via email
-                  </p>
-                  <p className="flex items-center justify-center gap-2">
-                    <span>💬</span> Follow us on social media
+                    <span>💬</span> Send us your feedback
                   </p>
                 </div>
               </div>
