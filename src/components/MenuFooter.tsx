@@ -42,14 +42,21 @@ const MenuFooter = () => {
                 <Phone className="h-14 w-14 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-green-100">📞 Contact</h3>
-              <div className="text-green-200 space-y-3 text-lg">
-                <p className="flex items-center justify-center gap-2">
-                  <span>📞</span> +91 9686239355
+              <div className="text-green-200 space-y-3">
+                <p className="flex items-center justify-center gap-2 text-base sm:text-lg">
+                  <span>📞</span> 
+                  <span className="break-all sm:break-normal">+91 9686239355</span>
                 </p>
-                <p className="flex items-center justify-center gap-2 bg-green-600/20 px-3 py-1 rounded-lg">
-                  <span>📱</span> WhatsApp: +91 9662487587
-                </p>
-                <p className="flex items-center justify-center gap-2 font-semibold text-white">
+                <div className="bg-green-600/20 px-2 py-2 rounded-lg">
+                  <p className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base">
+                    <span className="flex items-center gap-1">
+                      <span>📱</span> 
+                      <span className="font-medium">WhatsApp:</span>
+                    </span>
+                    <span className="break-all sm:break-normal font-mono">+91 9662487587</span>
+                  </p>
+                </div>
+                <p className="flex items-center justify-center gap-2 font-semibold text-white text-base sm:text-lg">
                   <span>🕐</span> Open: 9:00 AM - 11:00 PM
                 </p>
               </div>
