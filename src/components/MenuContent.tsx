@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const MenuContent = () => {
@@ -90,16 +89,25 @@ const MenuContent = () => {
   ];
 
   const MenuSection = ({ title, items, bgColor }: { title: string; items: any[]; bgColor: string }) => (
-    <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm mb-8">
-      <CardHeader className={`${bgColor} text-white`}>
-        <CardTitle className="text-2xl font-bold text-center">{title}</CardTitle>
+    <Card className="shadow-xl border-0 bg-gradient-to-br from-amber-50/95 to-orange-50/95 backdrop-blur-md mb-8 overflow-hidden relative">
+      {/* Subtle food image background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/20 via-orange-100/10 to-amber-100/20"></div>
+      
+      {/* Coffee stain effects */}
+      <div className="absolute top-4 right-4 w-8 h-8 bg-amber-200/30 rounded-full"></div>
+      <div className="absolute bottom-6 left-6 w-6 h-6 bg-orange-200/20 rounded-full"></div>
+      
+      <CardHeader className={`${bgColor} text-white relative z-10`}>
+        <CardTitle className="text-2xl font-bold text-center tracking-wide">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="p-6">
-        <div className="grid gap-3">
+      <CardContent className="p-6 relative z-10">
+        <div className="grid gap-4">
           {items.map((item, index) => (
-            <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-              <span className="text-gray-800 font-medium">{item.name}</span>
-              <span className="text-orange-600 font-bold text-lg">{item.price}</span>
+            <div key={index} className="flex justify-between items-center py-3 px-2 border-b border-amber-200/50 last:border-b-0 hover:bg-amber-100/30 transition-colors duration-200 rounded-lg">
+              <span className="text-amber-900 font-medium text-lg">{item.name}</span>
+              <span className="text-orange-700 font-bold text-xl bg-gradient-to-r from-orange-100 to-amber-100 px-3 py-1 rounded-full border border-orange-200">
+                {item.price}
+              </span>
             </div>
           ))}
         </div>
@@ -108,18 +116,22 @@ const MenuContent = () => {
   );
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-8">
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <MenuSection title="Fast Food Items (Veg)" items={fastFoodVeg} bgColor="bg-green-600" />
-          <MenuSection title="Meal (Veg)" items={mealVeg} bgColor="bg-green-600" />
-          <MenuSection title="Hot Drinks" items={hotDrinks} bgColor="bg-orange-600" />
+    <main className="max-w-6xl mx-auto px-4 py-12 relative">
+      {/* Decorative coffee elements */}
+      <div className="absolute top-20 left-8 w-12 h-12 bg-gradient-to-br from-amber-600/20 to-orange-600/20 rounded-full blur-sm"></div>
+      <div className="absolute bottom-32 right-12 w-16 h-16 bg-gradient-to-br from-yellow-600/20 to-amber-600/20 rounded-full blur-sm"></div>
+      
+      <div className="grid md:grid-cols-2 gap-10">
+        <div className="space-y-6">
+          <MenuSection title="🌿 Fast Food Items (Veg)" items={fastFoodVeg} bgColor="bg-gradient-to-r from-green-700 to-green-600" />
+          <MenuSection title="🌿 Meal (Veg)" items={mealVeg} bgColor="bg-gradient-to-r from-green-700 to-green-600" />
+          <MenuSection title="☕ Hot Drinks" items={hotDrinks} bgColor="bg-gradient-to-r from-amber-700 to-orange-700" />
         </div>
-        <div>
-          <MenuSection title="Fast Food Items (Non-Veg)" items={fastFoodNonVeg} bgColor="bg-red-600" />
-          <MenuSection title="Meal (Non-Veg)" items={mealNonVeg} bgColor="bg-red-600" />
-          <MenuSection title="Chapati" items={chapati} bgColor="bg-amber-600" />
-          <MenuSection title="Cold Beverages" items={coldBeverages} bgColor="bg-blue-600" />
+        <div className="space-y-6">
+          <MenuSection title="🍗 Fast Food Items (Non-Veg)" items={fastFoodNonVeg} bgColor="bg-gradient-to-r from-red-700 to-red-600" />
+          <MenuSection title="🍗 Meal (Non-Veg)" items={mealNonVeg} bgColor="bg-gradient-to-r from-red-700 to-red-600" />
+          <MenuSection title="🍞 Chapati" items={chapati} bgColor="bg-gradient-to-r from-yellow-700 to-amber-700" />
+          <MenuSection title="🥤 Cold Beverages" items={coldBeverages} bgColor="bg-gradient-to-r from-blue-700 to-cyan-600" />
         </div>
       </div>
     </main>
