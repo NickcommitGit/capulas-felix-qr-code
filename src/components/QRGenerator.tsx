@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
 
 const QRGenerator = () => {
-  const [url, setUrl] = useState('https://capulas-felix-restaurant.com');
+  const [url, setUrl] = useState('https://your-domain.com/menu');
   const [qrCode, setQrCode] = useState('');
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -45,7 +45,12 @@ const QRGenerator = () => {
   };
 
   const testQR = () => {
-    window.open(url, '_blank');
+    // For testing locally, redirect to the menu page
+    if (url.includes('your-domain.com/menu')) {
+      window.open('/menu', '_blank');
+    } else {
+      window.open(url, '_blank');
+    }
   };
 
   return (
@@ -96,7 +101,7 @@ const QRGenerator = () => {
                   className="flex-1 border-orange-600 text-orange-600 hover:bg-orange-50 transition-colors duration-200"
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  Test Link
+                  Test Menu
                 </Button>
               </div>
             </CardContent>
@@ -110,17 +115,17 @@ const QRGenerator = () => {
             <CardContent className="space-y-6">
               <div>
                 <label className="text-sm font-medium text-gray-700 mb-2 block">
-                  Restaurant Website URL
+                  Restaurant Menu URL
                 </label>
                 <Input
                   type="url"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
-                  placeholder="https://your-restaurant-website.com"
+                  placeholder="https://your-domain.com/menu"
                   className="border-orange-200 focus:border-orange-500 focus:ring-orange-500"
                 />
                 <p className="text-xs text-gray-500 mt-1">
-                  Enter the URL where customers can view your menu
+                  Enter your restaurant's menu page URL (default points to /menu)
                 </p>
               </div>
 
